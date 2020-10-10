@@ -1,5 +1,7 @@
 package engine.quiz;
 
+import engine.quiz.entity.Quiz;
+
 public class Response {
 
     private boolean isSuccess;

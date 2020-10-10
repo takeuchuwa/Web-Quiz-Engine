@@ -1,4 +1,4 @@
-package engine.quiz;
+package engine.quiz.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -6,7 +6,6 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 
@@ -30,6 +29,10 @@ public class Quiz {
     @ElementCollection
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Set<Integer> answer = new HashSet<>();
+
+    @ManyToOne
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private User createUser;
 
     public Quiz() {
     }
@@ -72,5 +75,13 @@ public class Quiz {
 
     public void setAnswer(Set<Integer> answer) {
         this.answer = answer;
+    }
+
+    public User getCreateUser() {
+        return createUser;
+    }
+
+    public void setCreateUser(User createUser) {
+        this.createUser = createUser;
     }
 }

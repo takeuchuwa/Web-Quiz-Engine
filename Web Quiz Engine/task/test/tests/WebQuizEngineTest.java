@@ -5,6 +5,7 @@ import com.google.gson.JsonObject;
 import engine.WebQuizEngine;
 import org.hyperskill.hstest.dynamic.input.DynamicTesting;
 import org.hyperskill.hstest.dynamic.input.DynamicTestingMethod;
+import org.hyperskill.hstest.exception.outcomes.UnexpectedError;
 import org.hyperskill.hstest.exception.outcomes.WrongAnswer;
 import org.hyperskill.hstest.mocks.web.request.HttpRequest;
 import org.hyperskill.hstest.mocks.web.response.HttpResponse;
@@ -598,7 +599,7 @@ public class WebQuizEngineTest extends SpringTest {
         try {
             reloadSpring();
         } catch (Exception ex) {
-            throw new RuntimeException(ex.getMessage());
+            throw new UnexpectedError(ex.getMessage());
         }
         return CheckResult.correct();
     }

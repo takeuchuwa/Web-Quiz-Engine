@@ -1,6 +1,6 @@
-package engine.repository;
+package engine.quiz.repository;
 
-import engine.quiz.Quiz;
+import engine.quiz.entity.Quiz;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
