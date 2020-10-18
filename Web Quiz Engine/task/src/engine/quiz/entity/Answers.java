@@ -1,4 +1,4 @@
-package engine.quiz;
+package engine.quiz.entity;
 
 import java.util.Set;
 

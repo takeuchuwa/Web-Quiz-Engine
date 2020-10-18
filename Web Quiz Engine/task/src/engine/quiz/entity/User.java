@@ -1,13 +1,12 @@
 package engine.quiz.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 public class User {
@@ -25,10 +24,6 @@ public class User {
     private String password;
 
     private String roles;
-
-    @OneToMany(mappedBy = "createUser")
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private List<Quiz> quizzes = new ArrayList<>();
 
     public User() {
         roles = "ROLE_USER";

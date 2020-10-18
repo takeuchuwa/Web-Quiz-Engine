@@ -1,16 +1,19 @@
-package engine.quiz;
+package engine.quiz.services;
 
+import engine.quiz.entity.Answers;
 import engine.quiz.entity.Quiz;
+import org.springframework.stereotype.Service;
 
-public class Response {
+@Service
+public class ResponseService {
 
     private boolean isSuccess;
 
     private String feedback;
 
-    public Response(){}
+    public ResponseService(){}
 
-    public Response(Quiz quiz, Answers answer) {
+    public ResponseService(Quiz quiz, Answers answer) {
         if (quiz.getAnswer().equals(answer.getAnswer())) {
             isSuccess = true;
             feedback = "Congratulations, you're right!";
@@ -25,7 +28,7 @@ public class Response {
     }
 
     public void setSuccess(boolean success) {
-        this.isSuccess = success;
+        isSuccess = success;
     }
 
     public String getFeedback() {
